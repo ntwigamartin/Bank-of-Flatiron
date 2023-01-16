@@ -4,9 +4,9 @@ function Main(){
     const [transactions, setTransactions] = useState([])
     
     useEffect(()=>{
-        fetch("http://localhost:3000/transactions")
+        fetch("https://ntwigamartin.github.io/Bank-of-Flatiron-data/db.json")
         .then(res=>res.json())
-        .then(data=>setTransactions(data))
+        .then(data=>setTransactions(data.transactions))
     }, [])
     
     const tableElements = transactions.map(element=>{
@@ -77,12 +77,13 @@ function Main(){
             </div>
             <br/><br/>
             <div>
+                <h2>New Transaction Details</h2>
                 <form onSubmit={handleSubmit}>
                     <input type="text" name="date" placeholder="date" value={formData.date} onChange={handleChange}/>
                     <input type="text" name="description" placeholder="description" value={formData.description} onChange={handleChange}/>
                     <input type="text" name="category" placeholder="category" value={formData.category} onChange={handleChange}/>
                     <input type="text" name="amount" placeholder="amount" value={formData.amount} onChange={handleChange}/>
-                    <button type="submit">Submit New Transaction Details</button>
+                    <button type="submit">Submit</button>
                 </form>
             </div>
         </div>
