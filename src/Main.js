@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 
 function Main(){
     const [transactions, setTransactions] = useState([])
+    
     useEffect(()=>{
         fetch("http://localhost:3000/transactions")
         .then(res=>res.json())
@@ -19,35 +20,42 @@ function Main(){
         )
     })
     
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState([{
         "date": "",
         "description": "",
         "category": "",
         "amount": ""
-    })
+    }])
+
+    const [submittedData, setSubmittedData] = useState([])
     
     function handleChange(event){
-        setFormData(prevFormData => {
-            return {
-                ...prevFormData, 
+        setFormData((prevState) => {
+            return { 
+                ...prevState,
                 [event.target.name] : event.target.value
             }
         })
     }
     
+
     function handleSubmit(event){
         event.preventDefault()
-        return formData
+        const dataArray = [...submittedData, formData];
+        setSubmittedData(dataArray)
+        
     }
 
-    const newTransaction = (
-        <tr>
-            <td>{formData.date}</td>
-            <td>{formData.description}</td>
-            <td>{formData.category}</td>
-            <td>{formData.amount}</td>
-        </tr>
-    )
+    const newTableRow = submittedData.map((data, index)=>{
+        return (
+            <tr key={index}>
+                <td>{data.date}</td>
+                <td>{data.description}</td>
+                <td>{data.category}</td>
+                <td>{data.amount}</td>
+            </tr>
+        )
+    })
 
     return (
         <div>
@@ -63,17 +71,18 @@ function Main(){
                     </thead>
                     <tbody>
                     {tableElements}
-                    {newTransaction}
+                    {newTableRow}
                     </tbody>
                 </table>
             </div>
+            <br/><br/>
             <div>
                 <form onSubmit={handleSubmit}>
                     <input type="text" name="date" placeholder="date" value={formData.date} onChange={handleChange}/>
                     <input type="text" name="description" placeholder="description" value={formData.description} onChange={handleChange}/>
                     <input type="text" name="category" placeholder="category" value={formData.category} onChange={handleChange}/>
                     <input type="text" name="amount" placeholder="amount" value={formData.amount} onChange={handleChange}/>
-                    <button>Submit</button>
+                    <button type="submit">Submit New Transaction Details</button>
                 </form>
             </div>
         </div>
@@ -81,3 +90,4 @@ function Main(){
 }
 
 export default Main;
+             
