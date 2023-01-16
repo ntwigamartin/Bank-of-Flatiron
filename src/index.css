@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(115, 101, 119, 0.911);
 }
 
 code {
@@ -14,4 +15,34 @@ code {
 
 table, thead, tbody, tr, td, th {
   border: 1px solid black;
+}
+
+.searchbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 30px;
+  padding-left: 30px;
+  background-color: rgb(92, 111, 121);
+}
+
+.searchbar > input {
+  height: 20px;
+  border-radius: 7px;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  padding: 60px;
+}
+
+.add-details >h2{
+  display: flex;
+  justify-content: center;
+}
+
+.add-details > form {
+  display: flex;
+  justify-content: space-around;
 }

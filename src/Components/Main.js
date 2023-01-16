@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import SearchBar from "./SearchBar";
 
 function Main(){
     const [transactions, setTransactions] = useState([])
@@ -59,7 +60,8 @@ function Main(){
 
     return (
         <div>
-            <div>
+            <SearchBar item={transactions}/>
+            <div className="table-container">
                 <table>
                     <thead>
                         <tr>
@@ -76,8 +78,8 @@ function Main(){
                 </table>
             </div>
             <br/><br/>
-            <div>
-                <h2>New Transaction Details</h2>
+            <div className="add-details">
+                <h2>Add New Transaction Details</h2>
                 <form onSubmit={handleSubmit}>
                     <input type="text" name="date" placeholder="date" value={formData.date} onChange={handleChange}/>
                     <input type="text" name="description" placeholder="description" value={formData.description} onChange={handleChange}/>
