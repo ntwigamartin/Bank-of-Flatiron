@@ -1,9 +1,9 @@
 # Bank of Flatiron App
 ## Description
-This is an app that allows the user to view transactions and add new<br> transaction details. Spoiler Alert - the app search transactions feature<br> is currently work in progress to be enable in the next version release.
+This is an app that allows the user to view transactions and add new<br> transaction details. Spoiler Alert - the app search transactions feature<br> is currently work in progress to be enabled in the next version release.
 
 ## Using the Web App
-The app can be accessed online by opening this [link]() on your browser.<br>
+The app can be accessed online by opening this [link](https://ephemeral-dusk-28104f.netlify.app/) on your browser.<br>
 
 Alternatively, the app can be accessed locally as per below instructions;
 ### Requirements
