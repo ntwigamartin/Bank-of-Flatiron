@@ -10,6 +10,8 @@ function Main(){
         .then(data=>setTransactions(data.transactions))
     }, [])
     
+         
+    
     const tableElements = transactions.map(element=>{
         return (
                 <tr key={element.id}>
@@ -59,7 +61,7 @@ function Main(){
     })
 
     return (
-        <div>
+        <div>       
             <SearchBar item={transactions}/>
             <div className="table-container">
                 <table>
@@ -81,7 +83,7 @@ function Main(){
             <div className="add-details">
                 <h2>Add New Transaction Details</h2>
                 <form onSubmit={handleSubmit}>
-                    <input type="text" name="date" placeholder="date" value={formData.date} onChange={handleChange}/>
+                    <input type="date" name="date" placeholder="date" value={formData.date} onChange={handleChange}/>
                     <input type="text" name="description" placeholder="description" value={formData.description} onChange={handleChange}/>
                     <input type="text" name="category" placeholder="category" value={formData.category} onChange={handleChange}/>
                     <input type="text" name="amount" placeholder="amount" value={formData.amount} onChange={handleChange}/>
