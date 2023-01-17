@@ -20,10 +20,15 @@ Alternatively, the app can be accessed locally as per below instructions;
         code .
 
 ### Running the App Locally
-* Type the following command on the terminal to open the app on your browser.
+Type the following commands on the terminal to run the app.
+
+* First install the necessary dependencies by running;
+
+        npm install
+
+* Then run the following command to open the app on your browser;
 
         npm start
-
 ## License
 ISC License <br>
 Copyright (c) 2023 Martin Ntwiga

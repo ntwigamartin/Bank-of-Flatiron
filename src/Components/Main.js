@@ -86,7 +86,7 @@ function Main(){
                     <input type="date" name="date" placeholder="date" value={formData.date} onChange={handleChange}/>
                     <input type="text" name="description" placeholder="description" value={formData.description} onChange={handleChange}/>
                     <input type="text" name="category" placeholder="category" value={formData.category} onChange={handleChange}/>
-                    <input type="text" name="amount" placeholder="amount" value={formData.amount} onChange={handleChange}/>
+                    <input type="number" name="amount" placeholder="amount" value={formData.amount} onChange={handleChange}/>
                     <button type="submit">Submit</button>
                 </form>
             </div>
